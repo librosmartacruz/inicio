@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    text-align: center;
+}
+
+img {
+    width: 32em;
+}
+
+header {
+    padding: 15px 0;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenido-cabecera {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header img {
+    flex: 1;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+header p {
+    flex: 1;
+    max-width: 600px;
+    width: 100%;
+    text-align: justify;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 5px;
+    text-transform: uppercase;
+    color: white;
+}
+
+h2 {
+    font-size: 1.4em; /* Reducido de 1.5em a 1.2em */
+    color: #ccc;
+    margin-top: -15px; /* Ajusta el espacio entre el título y el subtítulo */
+    text-transform: uppercase;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+figure {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.contenedor-portada {
+    perspective: 1000px;
+    margin: 20px;
+}
+
+.portada {
+    width: 300px;
+    height: auto;
+    transition: transform 0.1s, box-shadow 0.1s;
+    border-radius: 3px;
+}
+
+footer,
+.footer-contenido {
+    display: none;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.redes-sociales a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin: 0 8px; /* Añadido para aumentar la separación */
+}
+
+.redes-sociales img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .portada {
+        width: 250px;
+    }
+
+    .contenido-cabecera {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header img {
+        max-width: 90%;
+    }
+
+    header p {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .portada {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .portada {
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .contenido-cabecera {
+        gap: 5px;
+    }
+
+    header img {
+        max-width: 90%;
+    }
+
+    header p {
+        font-size: 0.9em;
+        text-align: justify;
+    }
+
+    .portada {
+        width: 150px;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
