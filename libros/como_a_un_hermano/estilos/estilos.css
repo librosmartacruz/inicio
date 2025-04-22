@@ -1,0 +1,304 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: #f4f4f9;
+}
+
+header {
+    background-color: transparent;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    position: relative;
+}
+
+.menu-icon {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    color: #f4f4f9;
+    background: none;
+    border: none;
+    outline: none;
+    transition: transform 0.3s ease; /* Transición del ícono hacia la izquierda */
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    left: 0; /* Pegado arriba a la izquierda */
+    width: 250px;
+    height: 100vh; /* El menú ocupará toda la altura de la pantalla */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.menu.active {
+    max-height: 100vh; /* Ahora el menú ocupará toda la altura */
+}
+
+.menu li {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.menu li a {
+    color: #f4f4f9;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: block;
+    padding: 15px 20px;
+}
+
+/* Eliminar el espacio superior en la biografía */
+.menu li:first-child {
+    padding-top: 0; /* Se quita el padding superior */
+}
+
+.menu li a:hover {
+    color: #1aab80;
+    border-radius: 5px;
+}
+
+#main {
+    height: 96vh;
+    background-image: url('../imagenes/como_a_un_hermano.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.fotoMarta {
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.fotoMarta:hover {
+    transform: scale(1.05);
+}
+
+.buy-button {
+    background-color: #1aab80;
+    color: #111;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.5em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #139a6e;
+    transform: scale(1.05);
+}
+
+#comunidad {
+    background-color: #222;
+}
+
+#comments {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+#comment-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #f4f4f9;
+}
+
+#submit-comment {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #1aab80;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#submit-comment:hover {
+    background-color: #139a6e;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    color: #1aab80;
+    font-size: 0.9em;
+}
+
+a.link {
+    color: #1aab80;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a.link:hover {
+    color: #f4f4f9;
+    text-shadow: 0px 0px 10px #1aab80;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu {
+        width: 50%; /* El menú ocupará hasta el 50% del ancho en dispositivos móviles */
+        left: -100%; /* El menú estará oculto a la izquierda */
+        transition: left 0.3s ease-in-out; /* Añadimos animación */
+    }
+
+    .menu.active {
+        left: 0; /* Aparece desde el borde izquierdo */
+    }
+
+    .menu-icon {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 20px 10px;
+    }
+
+    .fotoMarta {
+        width: 90%;
+    }
+
+    .buy-button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    #comments, #comment-input, #submit-comment {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+
+/* Estilos para pantallas grandes (PC y tablets en modo paisaje) */
+@media (min-width: 769px) {
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        max-height: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Centramos el menú */
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .menu li {
+        margin: 0 15px;
+        text-align: center;
+    }
+
+    .menu li a {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    /* Ocultamos el ícono ☰ en pantallas grandes */
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Estilos para el reproductor de video y sus controles */
+.video-container {
+    position: relative;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #333;
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-btn {
+    background-color: #1aab80;
+    border: none;
+    padding: 10px;
+    color: #111;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: #139a6e;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
